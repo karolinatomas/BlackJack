@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>Blackjack</h1>
+    <div class="main">
+      <div class="moneyCounter">
+        <p>Money:</p>
+        <p>cx</p>
+      </div>
+      <div class="text">
+        <p id="message-el">Want to play a round?</p>
+        <p id="card">Cards:</p>
+        <p id="sum">Sum:</p>
+      </div>
+      <button class="button" id="rulesButton" onclick="showRules()">
+        RULES
+      </button>
+    </div>
+    <div class="rules">
+      <h2>Objective of the Game:</h2>
+      <p>
+        Obtain a combination of cards with a value as close to 21 as possible
+        without exceeding it.
+      </p>
+      <p>
+        Beat the dealer by achieving a better combination or waiting for the
+        dealer to exceed 21.
+      </p>
+      <h2>Start Game:</h2>
+      <p>
+        Click "Start Game" to begin a new game with two random cards for both
+        the player and the dealer.
+      </p>
+      <h2>Show New Card Value:</h2>
+      <p>
+        Click the "Show New Card Value" button to generate a random card value
+        for the player or the dealer.
+      </p>
+      <h2>Restart Game:</h2>
+      <p>
+        Click "Restart Game" to reset the game, clear the cards, and prepare for
+        a new round.
+      </p>
+    </div>
+    <button class="button" id="button" onclick="startGame()">START GAME</button>
+    <button class="button" id="button" onclick="newCard()">NEW CARD</button>
+    <button class="button" id="newGame" onclick="newGame()">
+      START NEW GAME
+    </button>
+    <script src="index.js"></script>
+  </body>
+</html>

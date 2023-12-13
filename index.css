@@ -1,0 +1,50 @@
+body {
+  background: url("background.jpg");
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-right: 0;
+}
+p {
+  color: black;
+}
+
+h1 {
+  color: rgb(192, 184, 42);
+}
+#message-el {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+}
+
+.button {
+  width: 50%;
+  height: 15%;
+  background-color: rgb(192, 184, 42);
+  border: none;
+  margin-bottom: 2%;
+}
+
+.main {
+  display: flex;
+}
+.moneyCounter {
+  margin-left: 10%;
+}
+
+#newGame {
+  visibility: hidden;
+}
+
+.rules {
+  display: none;
+}
+
+#rulesButton {
+  height: 10em;
+  width: 10%;
+  margin-left: 8%;
+}
+
+.text {
+  width: 100%;
+}
