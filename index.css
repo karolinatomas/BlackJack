@@ -24,19 +24,23 @@ h1 {
   margin-bottom: 2%;
 }
 
-.main {
+#main {
+  display: flex;
+}
+#text {
   display: flex;
 }
 .moneyCounter {
   margin-left: 10%;
+  margin-right: 3%;
 }
 
 #newGame {
   visibility: hidden;
 }
 
-.rules {
-  display: none;
+#rules {
+  background-color: antiquewhite;
 }
 
 #rulesButton {

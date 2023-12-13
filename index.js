@@ -13,6 +13,11 @@ const sumText = document.getElementById("sum");
 const messageText = document.getElementById("message-el");
 messageText.textContent += 'Click on "START GAME"';
 const button = document.getElementById("newGame");
+const rules = document.getElementById("rules");
+const main = document.getElementById("text");
+const buttons = document.getElementById("buttons");
+const rulesButton = document.getElementById("rulesButton");
+rules.style.display = "none";
 
 console.log(firstCard, secondCard, sum);
 
@@ -75,4 +80,16 @@ function newGame() {
   firstCard = Math.round(Math.random() * 9 + 2);
   secondCard = Math.round(Math.random() * 9 + 2);
   cardsArray = [firstCard, secondCard];
+}
+
+function showRules() {
+  if (rules.style.display === "none") {
+    rules.style.display = "block";
+    main.style.visibility = "hidden";
+    buttons.style.display = "none";
+  } else {
+    rules.style.display = "none";
+    main.style.visibility = "visible";
+    buttons.style.display = "block";
+  }
 }

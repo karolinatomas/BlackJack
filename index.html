@@ -4,21 +4,23 @@
   </head>
   <body>
     <h1>Blackjack</h1>
-    <div class="main">
-      <div class="moneyCounter">
-        <p>Money:</p>
-        <p>cx</p>
-      </div>
-      <div class="text">
-        <p id="message-el">Want to play a round?</p>
-        <p id="card">Cards:</p>
-        <p id="sum">Sum:</p>
+    <div id="main">
+      <div id="text" style="flex-grow: 1">
+        <div class="moneyCounter">
+          <p>Money:</p>
+          <p>200 $</p>
+        </div>
+        <div class="text">
+          <p id="message-el">Want to play a round?</p>
+          <p id="card">Cards:</p>
+          <p id="sum">Sum:</p>
+        </div>
       </div>
       <button class="button" id="rulesButton" onclick="showRules()">
         RULES
       </button>
     </div>
-    <div class="rules">
+    <div id="rules">
       <h2>Objective of the Game:</h2>
       <p>
         Obtain a combination of cards with a value as close to 21 as possible
@@ -44,11 +46,15 @@
         a new round.
       </p>
     </div>
-    <button class="button" id="button" onclick="startGame()">START GAME</button>
-    <button class="button" id="button" onclick="newCard()">NEW CARD</button>
-    <button class="button" id="newGame" onclick="newGame()">
-      START NEW GAME
-    </button>
+    <div id="buttons">
+      <button class="button" id="button" onclick="startGame()">
+        START GAME
+      </button>
+      <button class="button" id="button" onclick="newCard()">NEW CARD</button>
+      <button class="button" id="newGame" onclick="newGame()">
+        START NEW GAME
+      </button>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
