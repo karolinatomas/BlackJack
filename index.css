@@ -52,3 +52,10 @@ h1 {
 .text {
   width: 100%;
 }
+.alert-style {
+  color: red; /* Add your desired styles here */
+  background-color: black;
+  height: 2em;
+  font-weight: bold;
+  padding-top: 0.5em;
+}

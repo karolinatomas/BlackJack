@@ -17,16 +17,20 @@ const rules = document.getElementById("rules");
 const main = document.getElementById("text");
 const buttons = document.getElementById("buttons");
 const rulesButton = document.getElementById("rulesButton");
+const moneyCounter = document.getElementById("moneyCounter-el");
+let money = 200;
+moneyCounter.textContent += money;
 rules.style.display = "none";
 
-console.log(firstCard, secondCard, sum);
-
 function startGame() {
-  if (cardsArray.length == 2 && sum === 0) {
-    console.log(cards);
-    renderGame();
-  } else if (!isAlive || hasBlackJack) {
-    messageText.textContent = "You haven´t start the game yet";
+  if (money > 0) {
+    if (cardsArray.length == 2 && sum === 0) {
+      console.log(cards);
+      renderGame();
+    } else if (!isAlive || hasBlackJack) {
+      messageText.textContent = "You haven´t start the game yet";
+    } else {
+    }
   } else {
   }
 }
@@ -43,26 +47,37 @@ function renderGame() {
     message2 = 'Click on "NEW CARD"';
   } else if (sum === 21) {
     message1 = "You´ve got Blackjack";
+    message2 = 'Click on "NEW GAME" if you want.';
     hasBlackJack = true;
   } else {
     message1 = "You are out of the game. ";
     message2 = 'Click on "NEW GAME" if you want.';
     isAlive = false;
   }
-  messageText.textContent = message1 + message2;
-  if (!isAlive || hasBlackJack) {
-    button.style.visibility = "visible";
+  counter();
+
+  if (money > 0) {
+    if (!isAlive || hasBlackJack) {
+      messageText.textContent = message1 + " " + message2;
+      button.style.visibility = "visible";
+    }
+  } else {
+    messageContent();
   }
 }
 
 function newCard() {
-  if (!isAlive || beggining || hasBlackJack) {
-    messageText.textContent = "You haven´t start the game yet";
+  if (money > 0) {
+    if (!isAlive || beggining || hasBlackJack) {
+      messageText.textContent = "You haven´t start the game yet";
+    } else {
+      newCardRender = Math.round(Math.random() * 9 + 2);
+      cardsArray.push(newCardRender);
+      console.log(cardsArray);
+      renderGame();
+    }
   } else {
-    newCardRender = Math.round(Math.random() * 9 + 2);
-    cardsArray.push(newCardRender);
-    console.log(cardsArray);
-    renderGame();
+    messageContent();
   }
 }
 
@@ -92,4 +107,21 @@ function showRules() {
     main.style.visibility = "visible";
     buttons.style.display = "block";
   }
+}
+
+function counter() {
+  if (!isAlive && money > 0) {
+    money -= 100;
+    moneyCounter.textContent = "Money: \n" + money;
+  } else if (hasBlackJack) {
+    money += 100;
+    moneyCounter.textContent = "Money: \n" + money;
+  } else if (money === 0) {
+    moneyCounter.textContent = "Money: \n" + money;
+  }
+}
+
+function messageContent() {
+  messageText.classList.add("alert-style");
+  messageText.textContent = "Game over!\n You lose all your money.";
 }
