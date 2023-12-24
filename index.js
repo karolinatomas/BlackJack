@@ -18,7 +18,7 @@ const main = document.getElementById("text");
 const buttons = document.getElementById("buttons");
 const rulesButton = document.getElementById("rulesButton");
 const moneyCounter = document.getElementById("moneyCounter-el");
-let money = 200;
+let money = 500;
 moneyCounter.textContent += money;
 rules.style.display = "none";
 
@@ -98,15 +98,17 @@ function newGame() {
 }
 
 function showRules() {
-  if (rules.style.display === "none") {
-    rules.style.display = "block";
-    main.style.visibility = "hidden";
-    buttons.style.display = "none";
-  } else {
-    rules.style.display = "none";
-    main.style.visibility = "visible";
-    buttons.style.display = "block";
-  }
+  rules.style.display = "block";
+  rulesButton.style.display = "none";
+  main.style.display = "none";
+  buttons.style.display = "none";
+}
+
+function hideRules() {
+  rules.style.display = "none";
+  main.style.display = "flex";
+  buttons.style.display = "block";
+  rulesButton.style.display = "block";
 }
 
 function counter() {
